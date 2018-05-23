@@ -1,16 +1,16 @@
+<?php require_once("res/x5engine.php"); ?>
 <!DOCTYPE html><!-- HTML5 -->
 <html prefix="og: http://ogp.me/ns#" lang="en-GB" dir="ltr">
 	<head>
-		<title>Hitesh Sathawane | Game Programmer</title>
+		<title>Search - WEBSITE X5 UNREGISTERED VERSION 13.0.4.24 - Hitesh Sathawane | Game Programmer</title>
 		<meta charset="utf-8" />
 		<!--[if IE]><meta http-equiv="ImageToolbar" content="False" /><![endif]-->
 		<meta name="author" content="Hitesh Sathawane" />
-		
-		<meta name="description" content="Game Programmer | Hitesh Sathawane | Portfolio " />
+		<meta name="generator" content="Incomedia WebSite X5 Professional 13.0.4.24 - UNREGISTERED VERSION - www.websitex5.com" />
 		<meta property="og:locale" content="en" />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content="http://hiteshsathawane.in/index.html" />
-		<meta property="og:title" content="Home " />
+		<meta property="og:url" content="http://hiteshsathawane.in/imsearch.php" />
+		<meta property="og:title" content="Search" />
 		<meta property="og:site_name" content="Hitesh Sathawane | Game Programmer" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		
@@ -19,20 +19,20 @@
 		<link rel="stylesheet" type="text/css" href="style/style.css?13-0-4-24" media="screen,print" />
 		<link rel="stylesheet" type="text/css" href="style/template.css?13-0-4-24" media="screen" />
 		<link rel="stylesheet" type="text/css" href="style/menu.css?13-0-4-24" media="screen" />
-		<link rel="stylesheet" type="text/css" href="pcss/index.css?13-0-4-24-636421255804005007" media="screen" />
+		<link rel="stylesheet" type="text/css" href="pcss/imsearch.css?13-0-4-24-636421255802715017" media="screen" />
 		<script type="text/javascript" src="res/jquery.js?13-0-4-24"></script>
 		<script type="text/javascript" src="res/x5engine.js?13-0-4-24" data-files-version="13-0-4-24"></script>
 		<script type="text/javascript">
 			window.onload = function(){ checkBrowserCompatibility('Your browser does not support the features necessary to display this website.','Your browser may not support the features necessary to display this website.','[1]Update your browser[/1] or [2]continue without updating[/2].','http://outdatedbrowser.com/'); };
 		</script>
-		<link rel="icon" href="favicon.ico?13-0-4-24-636421255803565003" type="image/vnd.microsoft.icon" />
+		<link rel="icon" href="favicon.ico?13-0-4-24-636421255802705023" type="image/vnd.microsoft.icon" />
 	</head>
 	<body>
 		<div id="imHeaderBg"></div>
 		<div id="imFooterBg"></div>
 		<div id="imPage">
 			<div id="imHeader">
-				<h1 class="imHidden"> - Hitesh Sathawane | Game Programmer</h1>
+				<h1 class="imHidden">Search - WEBSITE X5 UNREGISTERED VERSION 13.0.4.24 - Hitesh Sathawane | Game Programmer</h1>
 				<div id="imHeaderObjects"></div>
 			</div>
 			<a class="imHidden" href="#imGoToCont" title="Skip the main menu">Go to content</a>
@@ -42,7 +42,7 @@
 				<div id="imMnMn" class="auto main-menu">
 					<div class="hamburger-site-background menu-mobile-hidden"></div><div class="hamburger-button"><div><div><div class="hamburger-bar"></div><div class="hamburger-bar"></div><div class="hamburger-bar"></div></div></div></div><div class="hamburger-menu-background-container"><div class="hamburger-menu-background menu-mobile-hidden"><div class="hamburger-menu-close-button"><span>&times;</span></div></div></div>
 				<ul class="auto menu-mobile-hidden">
-					<li id="imMnMnNode0" class="imPage imMnMnCurrent">
+					<li id="imMnMnNode0" class=" imPage">
 						<a href="index.html">
 							<span class="imMnMnFirstBg">
 								<span class="imMnMnTxt"><span class="imMnMnImg"></span><span class="imMnMnTextLabel">Home </span></span>
@@ -115,23 +115,18 @@
 				<div id="imContentGraphics"></div>
 				<div id="imContent">
 					<a id="imGoToCont"></a>
-				<div id="imGroup_1" class="imVGroup">
-				<div id="imPageRow_1" class="imPageRow">
-				
-				<div id="imPageRowContent_1" class="imContentDataContainer">
-				<div id="imCell_1" class="" > <div id="imCellStyleGraphics_1"></div><div id="imCellStyle_1"  data-responsive-sequence-number="1"><div id="imTextObject_01">
-					<div class="text-tab-content"  id="imTextObject_01_tab0" style="">
-						<div class="text-inner">
-							<div style="text-align: center;"><br></div><div style="text-align: center;"><div><b><span class="fs10">Welcome!</span></b></div><div><b><br></b></div></div><div style="text-align: center;">You have just arrived to Hitesh Sathawane personal website.</div><div style="text-align: center;"><span class="fs10"> </span><br></div><div style="text-align: center;">I have a Bachelor of Science in Game Development from Bharathiar University and a Diploma in Computer Engineering from Maharashtra State Board of Technical Education.</div><div style="text-align: center;"> &nbsp;</div><div style="text-align: center;">My area of interest <b>Game Engine Development</b>, <b>3D Graphics and Rendering</b>, <b>Networking</b>.</div><div style="text-align: center;"> &nbsp;</div><div style="text-align: center;"></div><div style="text-align: center;"></div><div style="text-align: center;">Here you will find info about the projects I developed over the years .</div>
-						</div>
-					</div>
-				
+				<div id="imSearchPage">
+				<h2 id="imPgTitle">Search results</h2>
+				<?php
+				$search = new imSearch();
+				$keys = isset($_GET['search']) ? @htmlspecialchars($_GET['search']) : "";
+				$page = isset($_GET['page']) ? @htmlspecialchars($_GET['page']) : 0;
+				$type = isset($_GET['type']) ? @htmlspecialchars($_GET['type']) : "pages"; ?>
+				<div class="searchPageContainer">
+				<?php echo $search->search($keys, $page, $type); ?>
 				</div>
-				</div></div><div id="imCell_3" class="" > <div id="imCellStyleGraphics_3"></div><div id="imCellStyle_3"  data-responsive-sequence-number="2"><img id="imObjectImage_03" src="images/const_e0.gif" title="" alt="" /></div></div></div>
 				</div>
 				
-				</div>
-				<div id="imFooPad"></div><div id="imBtMnContainer" class="imContentDataContainer"><div id="imBtMn"><a href="index.html">Home </a> | <a href="resume.html">Resume</a> | <a href="game-engine.html">Projects</a> | <a href="contact-.html">Contact </a> | <a href="imsitemap.html">General Site Map</a></div></div>
 					<div class="imClear"></div>
 				</div>
 			</div>

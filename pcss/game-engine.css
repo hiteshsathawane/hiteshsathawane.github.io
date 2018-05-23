@@ -1,0 +1,33 @@
+h2#imPgTitle { position: relative; float: left; }
+#imBreadcrumb { position: relative; float: left; }
+@media (min-width: 1116px) {
+	#imPgMnContainer { position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: 0 auto 0 auto; width: 1116px; }
+	.imContentDataContainer { width: 962px; margin-left: auto; margin-right: auto; padding: 0 0px 0 154px; }
+	#imPgTitle { width: 948px; margin-left: 6px; margin-right: 6px; }
+	#imBreadcrumb { width: 948px; margin-left: 6px; margin-right: 6px; }
+	
+}
+
+@media  (max-width: 1115px) and (min-width: 720px) {
+	#imPgMnContainer { position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: 0 auto 0 auto; width: 720px; }
+	.imContentDataContainer { width: 566px; margin-left: auto; margin-right: auto; padding: 0 0px 0 154px; }
+	#imPgTitle { width: 552px; margin-left: 6px; margin-right: 6px; }
+	#imBreadcrumb { width: 552px; margin-left: 6px; margin-right: 6px; }
+	
+}
+
+@media  (max-width: 719px) and (min-width: 480px) {
+	#imPgMnContainer { position: absolute; top: 0px; bottom: 0px; left: 0px; right: 0px; margin: 0 auto 0 auto; width: 480px; }
+	.imContentDataContainer { width: 326px; margin-left: auto; margin-right: auto; padding: 0 0px 0 154px; }
+	#imPgTitle { width: 312px; margin-left: 6px; margin-right: 6px; }
+	#imBreadcrumb { width: 312px; margin-left: 6px; margin-right: 6px; }
+	
+}
+
+@media  (max-width: 479px) {
+	#imPgMnContainer { display: none; }.imContentDataContainer { width: 100%; }
+	#imPgTitle { width: 100%; margin-left: 0px; margin-right: 0px; }
+	#imBreadcrumb { width: 100%; margin-left: 0px; margin-right: 0px; }
+	
+}
+
