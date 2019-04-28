@@ -7,15 +7,12 @@ $imSettings['search']['general'] = array(
 	'menu_position' => 'left',
 	'defaultScope' => array(
 		'0' => 'index.html',
-		'3' => 'resume.html',
-		'5' => 'contact-.html',
-		'7' => 'level-editor.html',
-		'8' => 'game-engine.html',
-		'9' => 'multiplayer-game.html',
-		'10' => 'fizzy-octopus-.html',
-		'11' => 'c---simulation.html',
-		'12' => 'web-development.html',
-		'13' => 'space-invader.html'
+		'3' => 'about-me.html',
+		'5' => 'contact.html',
+		'7' => 'flash-game.html',
+		'8' => 'c---simulation.html',
+		'9' => 'web-development.html',
+		'11' => 'level-editor.html'
 	),
 	'extendedScope' => array(
 	)

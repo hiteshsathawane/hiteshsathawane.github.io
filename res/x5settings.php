@@ -7,23 +7,23 @@
 */
 
 $imSettings['general'] = array(
-	'url' => 'http://hiteshsathawane.in/',
-	'homepage_url' => 'http://hiteshsathawane.in/index.html',
-	'icon' => 'http://hiteshsathawane.in/favicon.ico',
-	'version' => '13.0.4.24',
-	'sitename' => 'Hitesh Sathawane | Game Programmer',
+	'url' => 'http://hiteshsathawane.xyz/',
+	'homepage_url' => 'http://hiteshsathawane.xyz/index.html',
+	'icon' => 'http://hiteshsathawane.xyz/favicon.ico',
+	'version' => '13.0.1.16',
+	'sitename' => 'hiteshsathawane2019',
 	'public_folder' => '',
-	'salt' => '7709fy6g51h70pi8f929qi8929i3ws01n7k688h7d80828fc1iz49',
+	'salt' => 'jz9j5m4s85n33zubnegq5so0rc9r7o5teib226',
 	'use_common_email_sender_address' => false,
 	'common_email_sender_addres' => ''
 );
 
 
 $imSettings['admin'] = array(
-	'notification_public_key' => 'f9b634f0be826a9a',
-	'notification_private_key' => 'ce2216616c964c9f',
-	'enable_manager_notifications' => false,
-	'theme' => 'orange'
+	'notification_public_key' => 'db844c9aa5cce5ff',
+	'notification_private_key' => '4cd0e911e8b96d82',
+	'enable_manager_notifications' => true,
+	'theme' => 'dark'
 );
 
 

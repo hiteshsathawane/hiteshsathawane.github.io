@@ -4,8 +4,8 @@
 		p = s.currentPath,
 		b = x.boot;
 
-	s.siteId = 'E320D2C297ADAF529E540DAA77C444ED';
-	s.version = '13-0-4-24';
+	s.siteId = 'EDFF9238C6E9D2D3DFFE9C31B3CC840F';
+	s.version = '13-0-1-16';
 	b.push(function () {
 		x.setupDateTime();
 		x.imAccess.showLogout();
@@ -14,22 +14,22 @@
 		x.imGrid.init();
 	});
 	s.menu = {
-		verticalScroll: false,
+		verticalScroll: true,
 	};
 	b.push(function () {
 		x.menu({
 			target: '#imMnMn',
-			verticalScroll: false,
+			verticalScroll: true,
 			showCurrent: false,
-			showLogoOnScroll: true,
-			menuHeight: 55,
-			menuWidth: 120,
-			submenuHeight: 22,
+			showLogoOnScroll: false,
+			menuHeight: 52,
+			menuWidth: 174,
+			submenuHeight: 40,
 			submenuWidth: 160,
 			opacity: 0.8,
 			fullWidthScroll: false,
 			type: 'singleColumn',
-			effect: 'fade'
+			effect: 'none'
 		});
 	});
 	b.push(function () { x.utils.imPreloadImages([p + 'menu/hor_main.png',p + 'menu/hor_main_h.png',p + 'menu/hor_main_c.png',p + 'menu/sub.png',p + 'menu/sub_h.png',p + 'menu/sub_f.png',p + 'menu/sub_m.png',p + 'menu/sub_l.png',p + 'menu/sub_f_h.png',p + 'menu/sub_m_h.png',p + 'menu/sub_l_h.png', p + 'res/imLoad.gif', p + 'res/imClose.png']); });
@@ -101,8 +101,8 @@
 	}, false, 'first');
 
 	// BreakPoints
-	s.breakPoints.push({ "hash": "59f49dc7a5dde348f0436e2976f2aea2", "name": "Desktop", "start": "max", "end": 1116, "fluid": false});
-	s.breakPoints.push({ "hash": "d2f9bff7f63c0d6b7c7d55510409c19b", "name": "Breakpoint 1", "start": 1115, "end": 720, "fluid": false});
+	s.breakPoints.push({ "hash": "71b14e2b2a5121661fb7ddae017bdbf6", "name": "Desktop", "start": "max", "end": 960, "fluid": false});
+	s.breakPoints.push({ "hash": "d2f9bff7f63c0d6b7c7d55510409c19b", "name": "Breakpoint 1", "start": 959, "end": 720, "fluid": false});
 	s.breakPoints.push({ "hash": "72e5146e7d399bc2f8a12127e43469f1", "name": "Mobile", "start": 719, "end": 480, "fluid": false});
 	s.breakPoints.push({ "hash": "5ecdcca63de80fd3d4fbb36295d22b7d", "name": "Mobile Fluid", "start": 479, "end": 0, "fluid": true});
 

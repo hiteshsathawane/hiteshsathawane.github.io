@@ -31,36 +31,35 @@ html:not(.no-cssanimations) #imShowBox.generic.animated {
 
 
 /* Page default */
-#imContent, #imHeader, #imFooter { font: normal normal normal 10pt 'Microsoft Sans Serif'; color: #000000; background-color: transparent; text-align: left; text-decoration: none; }
+#imContent, #imHeader, #imFooter { font: normal normal normal 10pt 'Tahoma'; color: #000000; background-color: transparent; text-align: left; text-decoration: none; }
 .text-tab-content { text-align: left; }
-body.wysiwyg { padding: 3px; font: normal normal normal 10pt 'Microsoft Sans Serif';  color: black; line-height: 1; }
+body.wysiwyg { padding: 3px; font: normal normal normal 10pt 'Tahoma';  color: black; line-height: 1; }
 body.wysiwyg p { margin: 0; line-height: 20px; }
 .dynamic-object-text p { line-height: 20px; }
 
 
 /* Page Title */
-#imPgTitle, #imPgTitle a, .imPgTitle, .imPgTitle a { padding-top: 2px; padding-bottom: 2px; margin: 5px 0; font: normal normal bold 12pt 'Microsoft Sans Serif'; color: #000000; background-color: transparent; text-align: left; text-decoration: none; }
+#imPgTitle, #imPgTitle a, .imPgTitle, .imPgTitle a { padding-top: 2px; padding-bottom: 2px; margin: 5px 0; font: normal normal bold 12pt 'Tahoma'; color: #000000; background-color: transparent; text-align: left; text-decoration: none; }
 #imPgTitle, .imPgTitle { border-width: 1px; border-style: solid; border-color: transparent transparent transparent transparent; }
 #imPgTitle.imTitleMargin, .imPgTitle.imTitleMargin { margin-left: 6px; margin-right: 6px; }
 
 
 /* Breadcrumb */
-.imBreadcrumb, #imBreadcrumb { display: none; }
-.imBreadcrumb, .imBreadcrumb a, #imBreadcrumb, #imBreadcrumb a { padding-top: 2px; padding-bottom: 2px; font: normal normal normal 7pt 'Tahoma'; color: #A9A9A9; background-color: transparent; text-align: left; text-decoration: none;  border-width: 1px; border-style: solid; border-color: transparent transparent transparent transparent}
-.imBreadcrumb a, .imBreadcrumb a:link, .imBreadcrumb a:hover, .imBreadcrumb a:visited, .imBreadcrumb a:active { color: #A9A9A9; }
+.imBreadcrumb, .imBreadcrumb a, #imBreadcrumb, #imBreadcrumb a { padding-top: 2px; padding-bottom: 2px; font: normal normal normal 7pt 'Tahoma'; color: #FFFFFF; background-color: transparent; text-align: left; text-decoration: none;  border-width: 1px; border-style: solid; border-color: transparent transparent transparent transparent}
+.imBreadcrumb a, .imBreadcrumb a:link, .imBreadcrumb a:hover, .imBreadcrumb a:visited, .imBreadcrumb a:active { color: #FFFFFF; }
 
 
 /* Links */
 .imCssLink:link, .imCssLink { background-color: transparent; color: #000000; text-decoration: underline; }
 .imCssLink:visited { background-color: transparent; color: #808080; text-decoration: underline; }
-.imCssLink:hover, .imCssLink:active, .imCssLink:hover, .imCssLink:active { background-color: transparent; color: #000000; text-decoration: underline; }
+.imCssLink:hover, .imCssLink:active, .imCssLink:hover, .imCssLink:active { background-color: transparent; color: #312622; text-decoration: underline; }
 .imAbbr:link { background-color: transparent; color: #000000; border-bottom: 1px dotted #000000; text-decoration: none; }
 .imAbbr:visited { background-color: transparent; color: #808080; border-bottom: 1px dotted #808080; text-decoration: none; }
-.imAbbr:hover, .imAbbr:active { background-color: transparent; color: #000000; border-bottom: 1px dotted #000000; text-decoration: none; }
+.imAbbr:hover, .imAbbr:active { background-color: transparent; color: #312622; border-bottom: 1px dotted #312622; text-decoration: none; }
 
 
 /* Bottom Menu */
-#imBtMn { margin-left: 6px; margin-right: 6px; padding: 2px 0; position: relative;  border-width: 1px; border-style: solid; border-color: transparent transparent transparent transparent}
+#imBtMn { margin-left: 14px; margin-right: 14px; padding: 2px 0; position: relative;  border-width: 1px; border-style: solid; border-color: transparent transparent transparent transparent}
 #imBtMn, #imBtMn a, #imBtMn a:visited, #imBtMn a:hover, #imBtMn a:active {font: normal normal normal 9pt 'Tahoma'; color: #000000; background-color: transparent; text-align: center; text-decoration: none; }
 #imBtMn a:hover { text-decoration: underline; }
 #imBtMn a { border: none; }
@@ -68,7 +67,7 @@ body.wysiwyg p { margin: 0; line-height: 20px; }
 textarea { resize: none; }
 #imContent input[type=button], #imContent input[type=submit], #imContent input[type=reset] {padding: 4px 8px; cursor: pointer; font: inherit; border: 1px solid #000000; background-color: #000000; color: #FFFFFF; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; box-sizing: content-box; }
 .search_form input { border-radius: 0; }
-.imNoScript { position: absolute; top: 5px; left: 5%; width: 90%; font: normal normal normal 10pt 'Microsoft Sans Serif'; text-align: left; text-decoration: none; }
+.imNoScript { position: absolute; top: 5px; left: 5%; width: 90%; font: normal normal normal 10pt 'Tahoma'; text-align: left; text-decoration: none; }
 
 /* Tip */
 .imTip { z-index: 100201; background-color: #FFFFFF; border-top: 1px solid #000000; border-right: 1px solid #000000; border-bottom: 1px solid #000000; border-left: 1px solid #000000; font: normal normal normal 9pt 'Tahoma'; color: #000000; background-color: #FFFFFF; text-align: center; text-decoration: none;  margin: 0 auto; padding: 10px; position: absolute; border-radius: 5px 5px 5px 5px; box-shadow: 1px 1px 5px 0px #808080;}
@@ -125,10 +124,10 @@ textarea { resize: none; }
 .topic-star-fixer-small { height: 16px; }
 .topic-pagination { text-align: center; margin: 7px 0; }
 .variable-star-rating { cursor: pointer; }
-#media-query-to-js { position: absolute; display: none; }@media (min-width: 1116px) {
-	#media-query-to-js { width: 1116px; }
+#media-query-to-js { position: absolute; display: none; }@media (min-width: 960px) {
+	#media-query-to-js { width: 960px; }
 }
-@media  (max-width: 1115px) and (min-width: 720px) {
+@media  (max-width: 959px) and (min-width: 720px) {
 	#media-query-to-js { width: 720px; }
 }
 @media  (max-width: 719px) and (min-width: 480px) {

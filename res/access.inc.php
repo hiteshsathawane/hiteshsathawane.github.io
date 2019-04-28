@@ -1,28 +1,28 @@
 <?php
 
 // Users data
-$imSettings['access']['webregistrations_gid'] = '9eg10o29';
+$imSettings['access']['webregistrations_gid'] = '51u8snum';
 $imSettings['access']['users'] = array(
-	'admin' => array(
-		'groups' => array('85e5531o'),
-		'id' => '85e5531o',
-		'name' => 'Admin',
-		'password' => 'ai57itp6',
+	'hitesh' => array(
+		'groups' => array('ch8vx5e5'),
+		'id' => 'ch8vx5e5',
+		'name' => 'Hitesh',
+		'password' => 'qwerty123#',
 		'email' => '',
 		'page' => 'index.html'
 	),
 	'newuser' => array(
-		'groups' => array('gt201099'),
-		'id' => 'gt201099',
+		'groups' => array('us7wv0mn'),
+		'id' => 'us7wv0mn',
 		'name' => 'NewUser',
-		'password' => '312y9brq',
+		'password' => 'xep77499',
 		'email' => '',
 		'page' => 'index.html'
 	)
 );
 
 // Admins list
-$imSettings['access']['admins'] = array('85e5531o');
+$imSettings['access']['admins'] = array('ch8vx5e5');
 
 // Page/Users permissions
 $imSettings['access']['pages'] = array();

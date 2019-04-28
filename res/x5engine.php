@@ -430,15 +430,6 @@ class imBlog
 
         $title = !$ext ? "<a href=\"?id=" . $id . "\">" . $bp['title'] . "</a>" : $bp['title'];
         echo "<h2 class=\"imPgTitle\" style=\"display: block;\" itemprop=\"headline\">" . $title . "</h2>\n";
-
-        // Publisher Microdata
-        echo "<span itemprop=\"publisher\" itemscope itemtype=\"http://schema.org/Organization\" style=\"display: none\">";
-        echo "<span itemprop=\"name\">" . $imSettings['general']['sitename'] . "</span>";
-        if (strlen($imSettings['general']['icon'])) {
-            echo "<img itemprop=\"logo\" src=\"" . $imSettings['general']['icon'] . "\" />";
-        }
-        echo "</span>";
-
         echo "<div class=\"imBreadcrumb\" style=\"display: block;\">";
         echo "<span>" . l10n('blog_published_by') . " <span itemprop=\"author\"><span itemscope itemtype=\"http://schema.org/Person\"><strong itemprop=\"name\">" . $bp['author'] . "</strong></span></span></span> ";
         echo l10n('blog_in') . " <a href=\"?category=" . urlencode($bp['category']) . "\" target=\"_blank\" rel=\"nofollow\"><span itemprop=\"about\">" . $bp['category'] . "</span></a> &middot; <span itemprop=\"datePublished\" content=\"" . $bp['timestamp'] . "\">" . $bp['timestamp'] . "</span>";
@@ -497,7 +488,7 @@ class imBlog
 
         // Schema.org Image
         if (isset($bp['opengraph']['postimage'])) {
-            echo "<img src=\"../" . $bp['opengraph']['postimage'] . "\" itemprop=\"image\" style=\"display: none\" alt=\"\">";
+            echo "<img src=\"" . $bp['opengraph']['postimage'] . "\" itemprop=\"image\" style=\"display: none\" alt=\"\">";
         }
 
         if ($ext != 0 && $bp['comments']) {
@@ -4429,20 +4420,13 @@ class Analytics
 
 class DynamicObject
 {
-	private $body;
-	private $storageId;
-	private $defaultText;
+	var $body = "";	
+	var $id;
+	var $defaultText = "";
 
-	/**
-	 * Create a new DynamicObject
-	 * 
-	 * @param string $storageId The id used to store this object
-	 */
-	function __construct($storageId)
+	function __construct($id)
 	{
-		$this->storageId = $storageId;
-		$this->body = "";
-		$this->defaultText = "";
+		$this->id = $id;
 	}
 
 	function setDefaultText($text)
@@ -4457,9 +4441,8 @@ class DynamicObject
 
 	function getContent()
 	{
-		if (strlen($this->body)) {
+		if (strlen($this->body))
 			return $this->body;
-		}
 		return $this->defaultText;
 	}
 
@@ -4472,13 +4455,11 @@ class DynamicObject
      */
     function prepFolder($folder)
     {
-        if (strlen(trim($folder)) == 0) {
+        if (strlen(trim($folder)) == 0)
             return "./";
-        }
 
-        if (substr($folder, 0, -1) != "/") {
+        if (substr($folder, 0, -1) != "/")
             $folder .= "/";
-        }
 
         return $folder;
     }
@@ -4486,12 +4467,10 @@ class DynamicObject
 	function loadFromFile($folder)
 	{
 		$folder = $this->prepFolder($folder);
-		if (file_exists($folder . $this->storageId . ".txt")) {
-			$this->body = @file_get_contents($folder . $this->storageId . ".txt");
-		}
-		else {
+		if (file_exists($folder . $this->id . ".txt"))
+			$this->body = @file_get_contents($folder . $this->id . ".txt");
+		else
 			$this->body = "";
-		}
 	}
 
 	function saveToFile($folder)
@@ -4500,22 +4479,19 @@ class DynamicObject
 		if ($folder != "" && $folder != "/" && $folder != "." && $folder != "./" && !file_exists($folder)) {
             @mkdir($folder, 0777, true);
         }
-		return @file_put_contents($folder . $this->storageId . ".txt", $this->body);
+		return @file_put_contents($folder . $this->id . ".txt", $this->body);
 	}
 
 	function loadFromDb($host, $user, $password, $db, $table)
 	{
 		$db = new ImDb($host, $user, $password, $db);
-		if (!$db->testConnection()) {
+		if (!$db->testConnection())
 			return false;
-		}
-		$data = $db->query("SELECT * FROM `" . $table . "` WHERE id='" . $db->escapeString($this->storageId) . "'");
-		if (is_bool($data)) {
+		$data = $db->query("SELECT * FROM `" . $table . "` WHERE id='" . $db->escapeString($this->id) . "'");
+		if (is_bool($data))
 			return false;
-		}
-		if (!isset($data[0]['body'])) {
+		if (!isset($data[0]['body']))
 			return false;
-		}
 		$this->body = $data[0]['body'];
 		return true;
 	}
@@ -4523,9 +4499,8 @@ class DynamicObject
 	function saveToDb($host, $user, $password, $db, $table)
 	{
 		$db = new ImDb($host, $user, $password, $db);
-		if (!$db->testConnection()) {
+		if (!$db->testConnection())
 			return false;
-		}
 		$db->createTable(
 	        $table,
 	        array(
@@ -4533,11 +4508,10 @@ class DynamicObject
 	            "body" => array('type' => 'TEXT')
 	        )
 	    );
-	    $exists = $db->query("SELECT * FROM `" . $table . "` WHERE id='" . $db->escapeString($this->storageId) . "'");
-	    if ($exists) {
-	    	return $db->query("UPDATE `" . $table . "` SET body='" . $db->escapeString($this->body) . "' WHERE id='" . $db->escapeString($this->storageId) . "'");
-	    }
-	    return $db->query("INSERT INTO `" . $table . "` (id, body) VALUES ('" . $db->escapeString($this->storageId) . "', '" . $db->escapeString($this->body) . "')");
+	    $exists = $db->query("SELECT * FROM `" . $table . "` WHERE id='" . $db->escapeString($this->id) . "'");
+	    if ($exists)
+	    	return $db->query("UPDATE `" . $table . "` SET body='" . $db->escapeString($this->body) . "' WHERE id='" . $db->escapeString($this->id) . "'");
+	    return $db->query("INSERT INTO `" . $table . "` (id, body) VALUES ('" . $db->escapeString($this->id) . "', '" . $db->escapeString($this->body) . "')");
 	}	
 }
 
@@ -6756,8 +6730,8 @@ class imSearch {
         $emptyResultsHtml = "<div style=\"margin-top: 15px; text-align: center; font-weight: bold;\">" . l10n('search_empty') . "</div>\n";
 
         $html .= "<div class=\"imPageSearchField\"><form method=\"get\" action=\"imsearch.php\">";
-        $html .= "<input style=\"width: 200px; padding: 3px; vertical-align: middle;\" class=\"search_field\" value=\"" . htmlspecialchars($keys, ENT_COMPAT, 'UTF-8') . "\" type=\"text\" name=\"search\" />";
-        $html .= "<input style=\"margin-left: 6px; padding: 3px 3px; vertical-align: middle; cursor: pointer;\" type=\"submit\" value=\"" . l10n('search_search') . "\">";
+        $html .= "<input style=\"width: 200px; font: 8pt Tahoma; color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); padding: 3px; border: 1px solid rgb(0, 0, 0); vertical-align: middle;\" class=\"search_field\" value=\"" . htmlspecialchars($keys, ENT_COMPAT, 'UTF-8') . "\" type=\"text\" name=\"search\" />";
+        $html .= "<input style=\"height: 21px; font: 8pt Tahoma; color: rgb(0, 0, 0); background-color: rgb(211, 211, 211); margin-left: 6px; padding: 3px 3px; border: 1px solid rgb(0, 0, 0); vertical-align: middle; cursor: pointer;\" type=\"submit\" value=\"" . l10n('search_search') . "\">";
         $html .= "</form></div>\n";
 
         // Exit if no search query was given
@@ -7746,18 +7720,17 @@ class ImTopic
                 if (isset($comment['body'])) {
                     $comments[] = $comment;
                 }
-                if (isset($comment['rating']) && $comment['rating'] > 0) {
+                if (isset($comment['rating'])) {
                     $votes += $comment['rating'];
                     $votescount++;
                 }
             }
         }
         $count = count($comments);
-        $vote = $votescount > 0 ? $votes / $votescount : 0;
+        $vote = $votescount > 0 ? $votes/$votescount : 0;
 
-        if ($count == 0 && $hideifempty) {
+        if ($count == 0 && $hideifempty)
             return;
-        }
 
         echo "<div class=\"topic-summary\">\n";
         echo "<div>" . ($count > 0 ? "<span itemprop=\"commentCount\">" . $count . "</span> " . ($count > 1 ? l10n('blog_comments') : l10n('blog_comment')) : l10n('blog_no_comment') . "<span itemprop=\"commentCount\" style=\"display: none;\">0</span>") . "</div>";
@@ -7793,13 +7766,13 @@ class ImTopic
             if (isset($comment['body'])) {
                 $comments[] = $comment;
             }
-            if (isset($comment['rating']) && $comment['rating'] > 0) {
+            if (isset($comment['rating'])) {
                 $votes += $comment['rating'];
                 $votescount++;
             }
         }
         $count = count($comments);
-        $vote = $votescount > 0 ? $votes / $votescount : 0;
+        $vote = $votescount > 0 ? $votes/$votescount : 0;
 
         if ($count == 0) {
             return $results;
@@ -8045,7 +8018,7 @@ class ImTopic
             // Check aproved comments count
             $ca = array();
             foreach ($c as $comment) {
-                if ($comment['approved'] == "1" && isset($comment['rating']) && $comment['rating'] > 0) {
+                if ($comment['approved'] == "1" && isset($comment['rating'])) {
                     $count++;
                     $votes += $comment['rating'];
                 }
